@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     setupSkillBarAnimation();
     setupSectionRevealAnimation();
     setupHeaderShrinkEffect();
+    setLoadingAnimation(); // Added loading animation initialization
 });
 
 function setupContactForm() {
-    const form = document.getElementById("contactForm");
-    
+    const form = document.getElementById("contact-form");
+
     if (form) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
@@ -21,9 +22,9 @@ function setupContactForm() {
             const templateID = "template_xjsk7nn";
 
             const templateParams = {
+                message: document.getElementById("message").value,
                 from_name: document.getElementById("name").value,
                 reply_to: document.getElementById("email").value,
-                message: document.getElementById("message").value,
             };
 
             emailjs.send(serviceID, templateID, templateParams)
@@ -41,7 +42,7 @@ function setupContactForm() {
 }
 
 function startTypewriterEffect() {
-    const text = "Aspiring IT Specialist | Software Developer | Ethical Hacker";
+    const text = "Aspiring IT Specialist | Software Developer | Web developer";
     const tagline = document.querySelector(".main-header p");
     let index = 0;
 
@@ -105,6 +106,23 @@ function setupHeaderShrinkEffect() {
     });
 }
 
+// Added function for loading animation
+function setLoadingAnimation() {
+    const loadingElement = document.getElementById("loadingText");
+
+    if (loadingElement) {
+        let loadingText = "";
+        const interval = setInterval(() => {
+            loadingText += ".";
+            loadingElement.textContent = `Please Wait${loadingText}`;
+
+            // Stop after 3 dots
+            if (loadingText.length === 3) {
+                clearInterval(interval);
+            }
+        }, 500); // Change interval speed as needed
+    }
+}
 
 
 
