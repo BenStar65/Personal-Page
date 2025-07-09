@@ -1,15 +1,71 @@
-// Initialize EmailJS
-emailjs.init("5tfG93RgjAaO6v_2d");
+ // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-document.addEventListener("DOMContentLoaded", () => {
-    setupContactForm();
-    startTypewriterEffect();
-    setupDarkModeToggle();
-    setupSkillBarAnimation();
-    setupSectionRevealAnimation();
-    setupHeaderShrinkEffect();
-    setLoadingAnimation(); // Added loading animation initialization
+        // Animate sections on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate skill progress bars
+         const skillObserver = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const progressBars = entry.target.querySelectorAll('.skill-progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.getAttribute('style').match(/width:\s*(\d+%)/);
+                if (width && width[1]) {
+                    bar.style.width = width[1]; // animate to actual width
+                }
+            });
+        }
+    });
+     }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skill-category').forEach(category => {
+            skillObserver.observe(category);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Mobile Responsiveness
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('nav-links').classList.toggle('show');
 });
+
+//EmailJs Feature 
+emailjs.init("5tfG93RgjAaO6v_2d");
 
 function setupContactForm() {
     const form = document.getElementById("contact-form");
@@ -29,100 +85,39 @@ function setupContactForm() {
 
             emailjs.send(serviceID, templateID, templateParams)
                 .then(response => {
-                    alert("Email sent successfully!");
+                    alert("✅ Email sent successfully!");
                     console.log("SUCCESS!", response);
                     form.reset();
                 })
                 .catch(error => {
-                    alert("Failed to send email. Check console for error details.");
+                    alert("❌ Failed to send email. Check console for error details.");
                     console.error("FAILED...", error);
                 });
         });
     }
 }
 
-function startTypewriterEffect() {
-    const text = "Aspiring IT Specialist | Software Developer | Web developer";
-    const tagline = document.querySelector(".main-header p");
-    let index = 0;
+// DarkMode Feature
+document.addEventListener("DOMContentLoaded", setupContactForm);
 
-    function typeEffect() {
-        if (index < text.length) {
-            tagline.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, 100);
-        }
+function setupDarkMode() {
+    const toggle = document.getElementById('darkToggle');
+    const isDark = localStorage.getItem('dark-mode') === 'true';
+
+    if (isDark) {
+        document.body.classList.add('dark-mode');
+        toggle.checked = true;
     }
 
-    if (tagline) typeEffect();
-}
-
-function setupDarkModeToggle() {
-    const toggleButton = document.getElementById("darkModeToggle");
-    if (toggleButton) {
-        toggleButton.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-        });
-    }
-}
-
-function setupSkillBarAnimation() {
-    const skillBars = document.querySelectorAll(".progress");
-    window.addEventListener("scroll", () => {
-        skillBars.forEach((bar) => {
-            const rect = bar.getBoundingClientRect();
-            if (rect.top < window.innerHeight && !bar.classList.contains("animated")) {
-                bar.classList.add("animated");
-                bar.style.width = bar.dataset.width;
-            }
-        });
-    });
-}
-
-function setupSectionRevealAnimation() {
-    const sections = document.querySelectorAll("section");
-
-    function revealSections() {
-        sections.forEach((section) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.75 && !section.classList.contains("active")) {
-                section.classList.add("active");
-            }
-        });
-    }
-
-    window.addEventListener("scroll", revealSections);
-    revealSections();
-}
-
-function setupHeaderShrinkEffect() {
-    const header = document.querySelector(".main-header");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            header.classList.add("shrink");
+    toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('dark-mode', 'true');
         } else {
-            header.classList.remove("shrink");
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('dark-mode', 'false');
         }
     });
 }
 
-// Added function for loading animation
-function setLoadingAnimation() {
-    const loadingElement = document.getElementById("loadingText");
-
-    if (loadingElement) {
-        let loadingText = "";
-        const interval = setInterval(() => {
-            loadingText += ".";
-            loadingElement.textContent = `Please Wait${loadingText}`;
-
-            // Stop after 3 dots
-            if (loadingText.length === 3) {
-                clearInterval(interval);
-            }
-        }, 500); // Change interval speed as needed
-    }
-}
-
-
-
+document.addEventListener('DOMContentLoaded', setupDarkMode);
