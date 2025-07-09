@@ -1,147 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siyabonga Shembe's Portfolio</title>
-  <link rel="stylesheet" href="index.css">
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-   <script src="index.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Siyabonga Shembe - Full-Stack Developer & Cybersecurity Enthusiast
+    </title>
+    <link href="index.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo">
+          <img src="profile.jpg" alt="Siyabonga Shembe" class="logo-img" />
+          <span>Siyabonga Shembe</span>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="dark-mode-toggle">
+          <label class="switch">
+          <input type="checkbox" id="darkToggle">
+          <span class="slider round"></span>
+          </label>
+        </div>
+      </nav>
+    </header>
 
-  <header class="main-header">
-    <h1>Siyabonga Shembe</h1>
-    <p></p> <!-- Typewriter effect will populate this dynamically -->
-    <button id="darkModeToggle">Dark Mode🌙 </button>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <img src="profile.jpg" alt="Siyabonga Shembe" class="profile-pic">
-      <div class="about-text">
-        <p>Hello! I am Siyabonga Shembe, a passionate individual aiming to excel in IT. My interests include software development, ethical hacking, and game development.</p>
-        <p>I'm also an RCL alumnus and a high school achiever in Physical Science, with a strong passion for learning and sharing knowledge.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="qualifications">
-    <h2>Qualifications</h2>
-    <ul>
-      <li>High School Bachelor's Qualification</li>
-      <li>Systems Development N4 Certificate</li>
-      <li>RMW102: Algebra (Saylor Academy)</li>
-      <li>Various IT Certifications (IBM SkillsBuild, Alison)</li>
-    </ul>
-  </section>
-
-  <section id="skills">
-    <h2>Skills & Projects</h2>
-    <div class="skills-container">
-      <div class="skill">
-        <img src="https://cdn-icons-png.flaticon.com/256/10817/10817310.png" alt="Programming">
-        <p>Programming</p>
-      </div>
-      <div class="skill">
-        <img src="https://media.istockphoto.com/id/1304090863/vector/certified-ethical-hacking-icon-showing-security-and-hacking-idea.jpg?s=612x612&w=0&k=20&c=J7_ucbmo6IAcyH63MworLff7k0oKq9tGjoxpIVvGxlE=" alt="Ethical Hacking">
-        <p>Ethical Hacking</p>
-      </div>
-      <div class="skill">
-        <img src="https://cdn-icons-png.freepik.com/256/10658/10658585.png?semt=ais_hybrid" alt="Game Development">
-        <p>Game Development</p>
-      </div>
-      <div class="skill-bar">
-        <h3>Programming</h3>
-        <div class="bar">
-          <div class="progress" data-width="75%">75%</div>
+    <section class="hero">
+      <div class="container">
+        <h1>👋 Hello World! I'm Siyabonga Shembe</h1>
+        <p class="subtitle">
+          🎓 Aspiring Developer | Future Ethical Hacker | IT Systems
+          Developer | Network & System Administration
+        </p>
+        <p class="location">📍 Based in Soweto, South Africa</p>
+        <div class="cta-buttons">
+          <a href="#about" class="btn btn-primary">Learn More</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
       </div>
-      <div class="skill-bar">
-        <h3>Networking</h3>
-        <div class="bar">
-          <div class="progress" data-width="60%">60%</div>
+    </section>
+
+    <main>
+      <section id="about" class="animate-on-scroll">
+        <div class="container">
+          <h2>🚀 About Me</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                I'm Siyabonga Shembe — a dedicated learner and developer on a
+                mission to become one of the best in IT. I specialize in
+                <span class="highlight">Software and Web Development</span>,
+                with strong interests in
+                <span class="highlight">Cybersecurity</span> and
+                <span class="highlight">Game Development</span>.
+              </p>
+              <p>
+                I'm continuously building my skills while pursuing formal
+                education and working on real-world projects. My passion extends
+                beyond coding to include
+                <span class="highlight"
+                  >Physics, Chemistry, and Mathematics</span
+                >, applying analytical thinking to IT problem-solving.
+              </p>
+              <p>
+                💻 Passionate about: Software Development • Web Development •
+                Ethical Hacking • Game Development • Science & Technology
+              </p>
+            </div>
+            <div class="stats">
+              <div class="stat-card">
+                <div class="stat-number">2+</div>
+                <div class="text">Years Studying</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="text">Programming Languages</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="text">Active Projects</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="skill-bar">
-        <h3>Web Development</h3>
-        <div class="bar">
-          <div class="progress" data-width="80%">80%</div>
+      </section>
+
+      <section id="skills" class="skills animate-on-scroll">
+        <div class="container">
+          <h2>🧠 Skills I'm Growing</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>👨‍💻 Programming & Web Development</h3>
+              <div class="skill-item">
+                <span>C# & Java</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>HTML5 & CSS3</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>JavaScript</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>SQL</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>ASP.NET</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 60%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>IP Addressing, Subnetting, Troubleshooting</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>🔐 Cybersecurity</h3>
+              <div class="skill-item">
+                <span>Burp Suite</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Wireshark</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>OWASP ZAP</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 65%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>ZenMap</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>⚙️ Tools & Technologies</h3>
+              <div class="skill-item">
+                <span>Visual Studio and Visual Studio Code</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>GitHub</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Unity 6</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 65%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span>Virtual Box and Windows Hyper-V</span>
+                <div class="skill-progress">
+                  <div class="skill-progress-fill" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section id="portfolio">
-    <h2>My Projects</h2>
-    <div class="project">
-      <img src="https://as2.ftcdn.net/v2/jpg/02/60/39/01/1000_F_260390167_FmXxJg71FWGVAenIbnaKTMY2ddtmL1PQ.jpg" alt="Car DealerShip" width="300px">
-      <h3>Cardealer Ship</h3>
-      <p>An Exotic car dealership.</p>
-      <a href="https://benstar65.github.io/Car-Dealership/">View Project</a>
-    </div>
-    <div class="project">
-      <img src="https://cdn-icons-png.flaticon.com/512/234/234601.png" alt="Database Management System" width="300px">
-      <h3>Lecturer DataBase Management System</h3>
-      <p>A C# application for managing lecturer information with Microsoft Access.</p>
-      <a href="#">View Project</a>
-    </div>
-  </section>
+      <section id="education" class="animate-on-scroll">
+        <div class="container">
+          <h2>📘 Current Education</h2>
+          <div class="education-grid">
+            <div class="education-card">
+              <h3>💡 Information Technology</h3>
+              <div class="institution">
+                Okanagan College (International Program)
+              </div>
+              <div class="status">🧠 In Progress</div>
+              <ul class="course-topics">
+                <li>
+                  <strong>Core Concepts in Networking:</strong> Subnetting, IP Addressing,
+                  Router & Switch Configuration, Ethernet, Security Fundamentals
+                </li>
+                <li>
+                  <strong>LAN Management:</strong> Virtualization, Windows
+                  Server 2022
+                </li>
+                <li>
+                  <strong>Foundations of Practice in Cybersecurity:</strong> Threat Management,
+                  Cryptography, Network Security
+                </li>
+                <li>
+                  <strong>Server Management:</strong> ADDS, DNS, DHCP, File
+                  Management
+                </li>
+              </ul>
+            </div>
 
-  <section id="cv">
-    <h2>My CV</h2>
-    <p>Below is a preview of my CV. You can download it for a complete overview of my professional background and achievements.</p>
-    <iframe src="Curriculum Vita1.pdf" class="cv-preview"></iframe> <br>
-    <a href="Curriculum Vita1.pdf" download class="download-button">Download CV</a>
-  </section>
+            <div class="education-card">
+              <h3>💻 Systems Development Higher Certificate</h3>
+              <div class="institution">Greenview College</div>
+              <div class="status">🧠 In Progress</div>
+              <ul class="course-topics">
+                <li>Advanced Programming Concepts</li>
+                <li>System Design & Analysis</li>
+                <li>Database Management Systems</li>
+                <li>SDLC and Agile Methodologies</li>
+                <li>Web Development</li>
+                <li>Project Management</li>
+              </ul>
+            </div>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+            <div class="education-card">
+              <h3>💻 Systems Development Certificate</h3>
+              <div class="institution">Greenview College</div>
+              <div class="status">🧠 Completed</div>
+              <ul class="course-topics">
+                <li>Programming Fundamentals</li>
+                <li>Intorduction to System Design & Analysis</li>
+                <li>Intorduction to Database Management Systems</li>
+                <li>Networking Fundamentals</li>
+                <li>Introduction to Web Development</li>
+                <li>Numeracy</li>
+                <li>Communication</li>
+              </ul>
+            </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+             <div class="education-card">
+              <h3>💻 Workplace Essentials</h3>
+              <div class="institution">Southern Labs</div>
+              <div class="status">🧠 Completed</div>
+              <ul class="course-topics">
+                <li>Health and Safety</li>
+                <li>Work Ethics</li>
+                <li>Workplace Management</li>
+                <li>Teamwork and Collaboration</li>
+                <li>Communication</li>
+                <li>Administration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
+      <section id="projects" class="projects animate-on-scroll">
+        <div class="container">
+          <h2>🔥 Current Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-header">
+                <h3>📚 Library Management System</h3>
+              </div>
+              <div class="project-content">
+                <p>
+                  A comprehensive library management system built with C#
+                  Windows Forms and MySQL. Features include book tracking,
+                  member management, and advanced search capabilities.
+                  <a href="https://github.com/BenStar65/Library-Management-System-" target="_blank"><b>Click Here to view Project</b></a>
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">Windows Forms</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Database Design</span>
+                </div>
+              </div>
+            </div>
 
-    <button type="submit">Send Email</button>
-</form>
-    <p id="formResponse"></p>
-  </section>
+            <div class="project-card">
+              <div class="project-header">
+                <h3>ATM Simulation</h3>
+              </div>
+              <div class="project-content">
+                <p>
+                  A comprehensive ATM Simulation built with C#
+                  Windows Forms and MySQl. Features include creating an account,
+                  Withdrawing, depositing, transaction history, Viewing Balance
+                  used Parameters to prevent SQL Injection
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">Windows Forms</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Database Design</span>
+                </div>
+              </div>
+            </div>
 
-  <section id="connect">
-    <h2>Connect with Me</h2>
-    <ul class="contact-icons">
-        <li>
-            <a href="https://linkedin.com/in/siyabonga-shembe-543950304" target="_blank">
-                <img src="linkedin-round-svgrepo-com.svg" alt="LinkedIn" class="contact-icon"> LinkedIn
-            </a>
-        </li>
-        <li>
-            <a href="mailto:dladlasiyabonga16@gmail.com">
-                <img src="gmail-svgrepo-com.svg" alt="Email" class="contact-icon"> Email
-            </a>
-        </li>
-        <li>
-            <a href="https://wa.me/27656587685" target="_blank">
-                <img src="WhatsApp.svg.png" alt="WhatsApp" class="contact-icon"> WhatsApp
-            </a>
-        </li>
-        <li>
-            <a href="tel:+27656587685">
-                <img src="call-medicine-rounded-svgrepo-com.svg" alt="Phone" class="contact-icon"> Call
-            </a>
-        </li>
-    </ul>
-</section>
+            <div class="project-card">
+              <div class="project-header">
+                <h3>Virtual Enviroment setup </h3>
+              </div>
+              <div class="project-content">
+                <p>
+                 I made a virtualized enviroment that consisted
+                 of a Server(Windows Server 2022) for DHCP, Windows 10, 
+                 and Windows 11 PC. Made Users Group hierarchy(Admins and Standard Users),
+                 implemented file sharing & remote desktop connection, implemented 
+                 firewall protection.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">VirtualBox</span>
+                  <span class="tech-tag">Operating Systems</span>
+                  <span class="tech-tag">Networking</span>
+                  <span class="tech-tag">Troubleshooting</span>
+                </div>
+              </div>
+            </div>
 
+            <div class="project-card">
+              <div class="project-header">
+                <h3>Model Profile</h3>
+              </div>
+              <div class="project-content">
+                <p>
+                  Created a Model Profile website
+                  show casing skills and determination,
+                  providing pictures and a video
+                  <a href="https://benstar65.github.io/Querique/" target="_blank"><b>Website View</b></a> <br>
+                  <a href="https://github.com/BenStar65/Querique" target="_blank"><b>GitHub Source Project</b></a>
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Dark Mode Feature</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    <p>&copy; 2025 Siyabonga Shembe. All Rights Reserved.</p>
-  </footer>
-</body>
+      <section id="contact" class="contact animate-on-scroll">
+        <div class="container">
+          <div class="contact-content">
+            <h2>Let's Connect!</h2>
+            <form id="contact-form" class="contact-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required></textarea>
+
+              <button type="submit">Send Email</button>
+            </form>
+
+            <p>
+              I'm always excited to discuss technology, collaborate on projects,
+              or explore new opportunities. Feel free to reach out!
+            </p>
+            <div class="contact-links">
+              <a href="mailto:dladlasiyabonga16@gmail.com" class="contact-link">
+                <span>📧</span>
+                <span>Email</span>
+              </a>
+              <a
+                href="https://linkedin.com/in/siyabonga-shembe"
+                class="contact-link"
+                target="_blank"
+              >
+                <span>💼</span>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://wa.me/27656587685"
+                class="contact-link"
+                target="_blank"
+              >
+                <span>💬</span>
+                <span>WhatsApp</span>
+              </a>
+              <a href="tel:+27656587685" class="contact-link">
+                <span>📱</span>
+                <span>Call</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
 </html>
