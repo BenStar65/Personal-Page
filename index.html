@@ -1,419 +1,680 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Siyabonga Shembe - Developer & Cybersecurity Enthusiast
-    </title>
-    <link href="index.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <nav class="container">
-        <div class="logo">
-          <img src="profile.jpg" alt="Siyabonga Shembe" class="logo-img" />
-          <span>Siyabonga Shembe</span>
-        </div>
-        <div class="menu-toggle" id="menu-toggle">☰</div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="dark-mode-toggle">
-          <label class="switch">
-          <input type="checkbox" id="darkToggle">
-          <span class="slider round"></span>
-          </label>
-        </div>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#030810" />
+  <meta name="description" content="Siyabonga Shembe — IT Infrastructure & Systems Engineer. Enterprise IT support at Schneider Electric, with expertise in Active Directory, endpoint management, networking, and cybersecurity." />
+  <meta property="og:title" content="Siyabonga Shembe · IT Infrastructure & Systems Engineer" />
+  <meta property="og:description" content="Portfolio of Siyabonga Shembe — enterprise IT support, infrastructure, and cybersecurity." />
+  <meta property="og:type" content="website" />
+  <title>Siyabonga Shembe · IT Infrastructure & Systems Engineer</title>
 
-    <section class="hero">
-      <div class="container">
-        <h1>👋 Hello World! I'm Siyabonga Shembe</h1>
-        <p class="subtitle">
-          🎓 Aspiring Developer | Future Ethical Hacker | IT Systems
-          Developer | Network & System Administration
+  <!--
+    Fonts
+    · Space Grotesk  — display headings (geometric, technical, humanised)
+    · Inter          — body text (clean, legible for dense technical content)
+    · JetBrains Mono — labels, dates, identifiers (code-adjacent but refined)
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       Fixed top bar. Becomes opaque with backdrop blur on scroll.
+       Mobile: collapses to hamburger.
+       ============================================================ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Brand mark: initials -->
+      <a href="#hero" class="nav-brand" aria-label="Siyabonga Shembe — scroll to top">
+        <span class="nav-brand-initials">SS</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about"      class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects"   class="nav-link">Projects</a></li>
+        <li><a href="#skills"     class="nav-link">Skills</a></li>
+        <li><a href="#education"  class="nav-link">Education</a></li>
+        <li><a href="#contact"    class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Mobile hamburger toggle -->
+      <button class="nav-toggle" id="nav-toggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav><!-- /nav -->
+
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         Full-viewport intro with animated canvas background.
+         Canvas draws: starfield + concentric orbital rings + pulse.
+         ============================================================ -->
+    <section id="hero" aria-label="Introduction">
+
+      <!-- Canvas background (star field + orbital ring pulse animation) -->
+      <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+
+        <!-- Role label (monospace, uppercase) -->
+        <p class="hero-label">
+          <span class="hero-label-line" aria-hidden="true"></span>
+          IT Infrastructure &amp; Systems Engineer
         </p>
-        <p class="location">📍 Based in Soweto, South Africa</p>
-        <div class="cta-buttons">
-          <a href="#about" class="btn btn-primary">Learn More</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+
+        <!-- Full name — the typographic centrepiece -->
+        <h1 class="hero-name">
+          <span class="hero-firstname">Siyabonga</span>
+          <span class="hero-lastname">Shembe<span class="hero-period" aria-hidden="true">.</span></span>
+        </h1>
+
+        <!-- Short, honest intro paragraph -->
+        <p class="hero-intro">
+          Enterprise IT support engineer at Schneider Electric, building operational
+          depth across endpoint management, Windows infrastructure, and
+          networking — with a growing focus on infrastructure security and cybersecurity.
+        </p>
+
+        <!-- Current-role status badge -->
+        <div class="hero-status" aria-label="Current position">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">Schneider Electric &nbsp;·&nbsp; IT Support Engineer Intern</span>
         </div>
+
+        <!-- External profile links -->
+        <nav class="hero-links" aria-label="External profiles">
+          <a href="https://github.com/BenStar65"
+             class="hero-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="GitHub profile — opens in new tab">
+            <svg class="link-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/siyabonga-shembe"
+             class="hero-link hero-link--primary"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="LinkedIn profile — opens in new tab">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </nav>
+
+      </div><!-- /hero-content -->
+
+      <!-- Animated scroll indicator -->
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span class="scroll-label">scroll</span>
       </div>
-    </section>
 
-    <main>
-      <section id="about" class="animate-on-scroll">
-        <div class="container">
-          <h2>🚀 About Me</h2>
-          <div class="about-content">
-            <div class="about-text">
-              <p>
-                I'm Siyabonga Shembe — a dedicated learner and developer on a
-                mission to become one of the best in the IT industry. I specialize in
-                <span class="highlight">Software and Web Development</span>,
-                With strong interests in
-                <span class="highlight">Cybersecurity</span> and
-                <span class="highlight">Network Engineering</span>.
-              </p>
-              <p>
-                I'm continuously building my skills while pursuing formal
-                education and working on real-world projects. My passion extends
-                beyond coding to include
-                <span class="highlight"
-                  >Physics, Chemistry, and Mathematics</span
-                >, applying analytical thinking to IT problem-solving.
-              </p>
-              <p>
-                💻 Passionate about: Software Development • Web Development •
-                Ethical Hacking • Game Development • Science & Technology
-              </p>
-            </div>
-            <div class="stats">
-              <div class="stat-card">
-                <div class="stat-number">2+</div>
-                <div class="text">Years Studying</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">5+</div>
-                <div class="text">Programming Languages</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">3+</div>
-                <div class="text">Active Projects</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    </section><!-- /hero -->
 
-      <section id="skills" class="skills animate-on-scroll">
-        <div class="container">
-          <h2>🧠 Skills I'm Growing</h2>
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3>👨‍💻 Programming & Web Development</h3>
-              <div class="skill-item">
-                <span>C# & Java</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 85%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>HTML5 & CSS3</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>JavaScript</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 70%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>SQL</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 80%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>ASP.NET</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 60%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>IP Addressing, Subnetting, Troubleshooting</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 80%"></div>
-                </div>
-              </div>
-            </div>
 
-            <div class="skill-category">
-              <h3>🔐 Cybersecurity</h3>
-              <div class="skill-item">
-                <span>Burp Suite</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 75%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>Wireshark</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 70%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>OWASP ZAP</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 65%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>ZenMap</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 70%"></div>
-                </div>
-              </div>
-            </div>
+    <!-- ============================================================
+         ABOUT
+         Bio text + sticky contact card. 2-column on desktop.
+         ============================================================ -->
+    <section id="about" class="section" aria-label="About Siyabonga">
+      <div class="section-inner">
 
-            <div class="skill-category">
-              <h3>⚙️ Tools & Technologies</h3>
-              <div class="skill-item">
-                <span>Visual Studio and Visual Studio Code</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 85%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>GitHub</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 80%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>Unity 6</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 65%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <span>Virtual Box and Windows Hyper-V</span>
-                <div class="skill-progress">
-                  <div class="skill-progress-fill" style="width: 88%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <header class="section-header reveal">
+          <span class="section-tag" aria-hidden="true">01</span>
+          <h2 class="section-title">About</h2>
+        </header>
 
-      <section id="education" class="animate-on-scroll">
-        <div class="container">
-          <h2>📘 Current Education</h2>
-          <div class="education-grid">
-            <div class="education-card">
-              <h3>💡 Information Technology</h3>
-              <div class="institution">
-                Okanagan College (International Program)
-              </div>
-              <div class="status">🧠 In Progress</div>
-              <ul class="course-topics">
-                <li>
-                  <strong>Core Concepts in Networking:</strong> Subnetting, IP Addressing,
-                  Router & Switch Configuration, Ethernet, Security Fundamentals
-                </li>
-                <li>
-                  <strong>LAN Management:</strong> Virtualization, Windows
-                  Server 2022
-                </li>
-                <li>
-                  <strong>Foundations of Practice in Cybersecurity:</strong> Threat Management,
-                  Cryptography, Network Security
-                </li>
-                <li>
-                  <strong>Server Management:</strong> ADDS, DNS, DHCP, File
-                  Management
-                </li>
-              </ul>
-            </div>
+        <div class="about-grid">
 
-            <div class="education-card">
-              <h3>💻 Systems Development Higher Certificate</h3>
-              <div class="institution">Greenview College</div>
-              <div class="status">🧠 In Progress</div>
-              <ul class="course-topics">
-                <li>Advanced Programming Concepts</li>
-                <li>System Design & Analysis</li>
-                <li>Database Management Systems</li>
-                <li>SDLC and Agile Methodologies</li>
-                <li>Web Development</li>
-                <li>Project Management</li>
-              </ul>
-            </div>
-
-            <div class="education-card">
-              <h3>💻 Systems Development Certificate</h3>
-              <div class="institution">Greenview College</div>
-              <div class="status">🧠 Completed</div>
-              <ul class="course-topics">
-                <li>Programming Fundamentals</li>
-                <li>Introduction to System Design & Analysis</li>
-                <li>Introduction to Database Management Systems(Microsft Access)</li>
-                <li>Networking Fundamentals</li>
-                <li>Introduction to Web Development</li>
-                <li>Numeracy</li>
-                <li>Communication</li>
-                <li>Microsft Suite</li>
-              </ul>
-            </div>
-
-             <div class="education-card">
-              <h3>💻 Workplace Essentials</h3>
-              <div class="institution">Southern Labs</div>
-              <div class="status">🧠 Completed</div>
-              <ul class="course-topics">
-                <li>Health and Safety</li>
-                <li>Work Ethics</li>
-                <li>Workplace Management</li>
-                <li>Teamwork and Collaboration</li>
-                <li>Communication</li>
-                <li>Office Administration</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="projects animate-on-scroll">
-        <div class="container">
-          <h2>🔥 Current Projects</h2>
-          <div class="projects-grid">
-            <div class="project-card">
-              <div class="project-header">
-                <h3>📚 Library Management System</h3>
-              </div>
-              <div class="project-content">
-                <p>
-                  A comprehensive library management system built with C#
-                  Windows Forms and MySQL. Features include book tracking,
-                  member management, and advanced search capabilities.
-                  <a href="https://github.com/BenStar65/Library-Management-System-" target="_blank"><b>View Project</b></a>
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">C#</span>
-                  <span class="tech-tag">Windows Forms</span>
-                  <span class="tech-tag">MySQL</span>
-                  <span class="tech-tag">Database Design</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <h3>ATM Simulation</h3>
-              </div>
-              <div class="project-content">
-                <p>
-                  A comprehensive ATM Simulation built with C#
-                  Windows Forms and MySQl. Features include creating an account,
-                  Withdrawing, depositing, transaction history, Viewing Balance
-                  used Parameters to prevent SQL Injection
-                  <a href="https://github.com/BenStar65/ATM-Simulation" target="_blank"> View Project</a>
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">C#</span>
-                  <span class="tech-tag">Windows Forms</span>
-                  <span class="tech-tag">MySQL</span>
-                  <span class="tech-tag">Database Design</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <h3>Virtual Enviroment setup </h3>
-              </div>
-              <div class="project-content">
-                <p>
-                 I made a virtualized environment that consisted
-                 of a Server(Windows Server 2022) for DHCP, Windows 10, 
-                 and Windows 11 PC. Made Users Group hierarchy(Admins and Standard Users),
-                 Implemented file sharing & remote desktop connection, implemented 
-                 firewall protection.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">VirtualBox</span>
-                  <span class="tech-tag">Operating Systems</span>
-                  <span class="tech-tag">Networking</span>
-                  <span class="tech-tag">Troubleshooting</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <h3>Model Profile</h3>
-              </div>
-              <div class="project-content">
-                <p>
-                  Created a Model Profile website
-                  show casing skills and determination,
-                  providing pictures and a video
-                  <a href="https://benstar65.github.io/Querique/" target="_blank"><b>Website View</b></a> <br>
-                  <a href="https://github.com/BenStar65/Querique" target="_blank"><b>GitHub Source Project</b></a>
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML5</span>
-                  <span class="tech-tag">CSS3</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">Dark Mode Feature</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact animate-on-scroll">
-        <div class="container">
-          <div class="contact-content">
-            <h2>Let's Connect!</h2>
-            <form id="contact-form" class="contact-form">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required />
-
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-
-              <label for="message">Message:</label>
-              <textarea id="message" name="message" required></textarea>
-
-              <button type="submit">Send Email</button>
-            </form>
-
+          <div class="about-bio reveal">
             <p>
-              I'm always excited to discuss technology, collaborate on projects,
-              or explore new opportunities. Feel free to reach out!
+              I work as an IT Support Engineer Intern at Schneider Electric, supporting
+              enterprise environments across Active Directory, endpoint management, and
+              Windows infrastructure. My technical background spans systems administration,
+              networking, and software development — with a deepening focus on cybersecurity
+              and infrastructure security.
             </p>
-            <div class="contact-links">
-              <a href="mailto:dladlasiyabonga16@gmail.com" class="contact-link">
-                <span>📧</span>
-                <span>Email</span>
-              </a>
-              <a
-                href="https://linkedin.com/in/siyabonga-shembe"
-                class="contact-link"
-                target="_blank"
-              >
-                <span>💼</span>
-                <span>LinkedIn</span>
-              </a>
-              <a
-                href="https://wa.me/27656587685"
-                class="contact-link"
-                target="_blank"
-              >
-                <span>💬</span>
-                <span>WhatsApp</span>
-              </a>
-              <a href="tel:+27656587685" class="contact-link">
-                <span>📱</span>
-                <span>Call</span>
-              </a>
+            <p>
+              I take a hands-on approach to learning, building virtual lab environments
+              to test and extend what I encounter professionally. Outside the enterprise
+              environment, I develop independent projects exploring network security, domain
+              infrastructure, and the intersections between system administration and
+              security operations.
+            </p>
+          </div>
+
+          <aside class="about-contact-card reveal" aria-label="Contact details">
+            <h3 class="contact-card-title">Contact</h3>
+            <ul class="contact-list" role="list">
+              <li class="contact-item">
+                <span class="contact-label">Email</span>
+                <a href="mailto:dladlasiyabonga16@gmail.com" class="contact-link">
+                  dladlasiyabonga16@gmail.com
+                </a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Phone</span>
+                <a href="tel:+27656587685" class="contact-link">065 658 7685</a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Location</span>
+                <span>Soweto, Johannesburg, SA</span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">GitHub</span>
+                <a href="https://github.com/BenStar65" class="contact-link" target="_blank" rel="noopener noreferrer">BenStar65</a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">LinkedIn</span>
+                <a href="https://linkedin.com/in/siyabonga-shembe" class="contact-link" target="_blank" rel="noopener noreferrer">siyabonga-shembe</a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Portfolio</span>
+                <a href="https://benstar65.github.io/Personal-Page/" class="contact-link" target="_blank" rel="noopener noreferrer">benstar65.github.io</a>
+              </li>
+            </ul>
+          </aside>
+
+        </div><!-- /about-grid -->
+      </div>
+    </section><!-- /about -->
+
+
+    <!-- ============================================================
+         EXPERIENCE
+         Single employer with full bullet list.
+         ============================================================ -->
+    <section id="experience" class="section section--alt" aria-label="Work experience">
+      <div class="section-inner">
+
+        <header class="section-header reveal">
+          <span class="section-tag" aria-hidden="true">02</span>
+          <h2 class="section-title">Experience</h2>
+        </header>
+
+        <article class="experience-card reveal" aria-label="Schneider Electric">
+
+          <div class="exp-header">
+            <div class="exp-meta">
+              <h3 class="exp-company">Schneider Electric</h3>
+              <p class="exp-role">IT Support Engineer Intern</p>
+            </div>
+            <div class="exp-details">
+              <span class="exp-date">Feb 2026 – Present</span>
+              <span class="exp-location">Johannesburg, Midrand</span>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-    <script src="index.js"></script>
-  </body>
+
+          <ul class="exp-bullets" role="list">
+            <li>Provided end-user support for IT incidents and managed ITSM tickets while maintaining SLA compliance and accurate documentation.</li>
+            <li>Performed PC imaging, deployment, software installation, patch management, and endpoint support using SCCM.</li>
+            <li>Troubleshot GPO and Active Directory issues using GPResult, RSOP, DNS validation, and connectivity checks.</li>
+            <li>Supported Zscaler and VPN connectivity for secure enterprise access.</li>
+            <li>Supported Microsoft 365, Teams, Outlook, SharePoint, and Salesforce-related troubleshooting within an enterprise environment.</li>
+            <li>Resolved Intune-related mobile device and compliance issues across Android and iOS platforms.</li>
+            <li>Conducted stock checks for IT assets and assessed faulty devices by identifying and documenting hardware-related issues for troubleshooting and replacement purposes.</li>
+            <li>Provided onsite IT support during operational and corporate events, ensuring stable connectivity and technical assistance when required.</li>
+            <li>Participated in operational support processes, including system updates and endpoint compliance checks.</li>
+          </ul>
+
+        </article>
+
+      </div>
+    </section><!-- /experience -->
+
+
+    <!-- ============================================================
+         PROJECTS
+         3-column grid on desktop. First 3 have full detail bullets;
+         last 2 are minimal software project cards.
+         ============================================================ -->
+    <section id="projects" class="section" aria-label="Technical projects">
+      <div class="section-inner">
+
+        <header class="section-header reveal">
+          <span class="section-tag" aria-hidden="true">03</span>
+          <h2 class="section-title">Projects</h2>
+        </header>
+
+        <div class="projects-grid">
+
+          <!-- ── Project 1 ── -->
+          <article class="project-card reveal" aria-label="Virtual Security Testing and Network Auditing Lab">
+            <div class="project-header">
+              <div class="project-meta">
+                <span class="project-date">Nov 2025</span>
+                <div class="project-tags" aria-label="Categories">
+                  <span class="project-tag">Security</span>
+                  <span class="project-tag">Infrastructure</span>
+                </div>
+              </div>
+              <h3 class="project-title">Virtual Security Testing &amp; Network Auditing Lab</h3>
+            </div>
+            <svg class="project-diagram" viewBox="0 0 320 176" role="img" aria-labelledby="security-lab-diagram-title">
+              <title id="security-lab-diagram-title">Security testing lab topology</title>
+              <path class="diagram-line" d="M104 82H124M196 82H216M160 68V56M160 96V120" />
+              <g class="diagram-node diagram-node--accent">
+                <rect x="16" y="60" width="88" height="44" rx="6" />
+                <text x="60" y="77">Kali Linux</text>
+                <text class="diagram-node-sub" x="60" y="93">Nmap / ZAP</text>
+              </g>
+              <g class="diagram-node diagram-node--core">
+                <rect x="124" y="68" width="72" height="28" rx="6" />
+                <text x="160" y="83">Lab LAN</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="216" y="60" width="88" height="44" rx="6" />
+                <text x="260" y="77">Windows 11</text>
+                <text class="diagram-node-sub" x="260" y="93">Target VM</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="108" y="12" width="104" height="44" rx="6" />
+                <text x="160" y="29">Server 2022</text>
+                <text class="diagram-node-sub" x="160" y="45">AD DS / DNS / IIS</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="108" y="120" width="104" height="44" rx="6" />
+                <text x="160" y="137">Traffic Capture</text>
+                <text class="diagram-node-sub" x="160" y="153">Wireshark</text>
+              </g>
+            </svg>
+            <ul class="project-bullets">
+              <li>Built a virtual security lab using Kali Linux and Windows 11 to analyse network traffic and test system security in a controlled environment.</li>
+              <li>Configured Windows Server services including AD DS, DNS, and IIS, improving understanding of enterprise infrastructure and system administration.</li>
+              <li>Performed Nmap and Wireshark analysis across virtual machines, identifying exposed services and improving network visibility within the lab environment.</li>
+            </ul>
+          </article>
+
+          <!-- ── Project 2 ── -->
+          <article class="project-card reveal" aria-label="Active Directory Domain Infrastructure Deployment">
+            <div class="project-header">
+              <div class="project-meta">
+                <span class="project-date">Jul 2025</span>
+                <div class="project-tags" aria-label="Categories">
+                  <span class="project-tag">Infrastructure</span>
+                  <span class="project-tag">Networking</span>
+                </div>
+              </div>
+              <h3 class="project-title">Active Directory Domain Infrastructure Deployment</h3>
+            </div>
+            <svg class="project-diagram" viewBox="0 0 320 176" role="img" aria-labelledby="ad-diagram-title">
+              <title id="ad-diagram-title">Active Directory domain infrastructure diagram</title>
+              <path class="diagram-line diagram-line--solid" d="M96 82H128M192 82H224M160 104V126" />
+              <g class="diagram-node">
+                <rect x="16" y="58" width="80" height="48" rx="6" />
+                <text x="56" y="77">Server</text>
+                <text class="diagram-node-sub" x="56" y="93">2022 DC</text>
+              </g>
+              <g class="diagram-node diagram-node--accent">
+                <rect x="128" y="42" width="64" height="80" rx="8" />
+                <text x="160" y="61">AD DS</text>
+                <text class="diagram-node-sub" x="160" y="79">DNS</text>
+                <text class="diagram-node-sub" x="160" y="96">DHCP</text>
+                <text class="diagram-node-sub" x="160" y="112">GPO</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="224" y="58" width="80" height="48" rx="6" />
+                <text x="264" y="77">Domain</text>
+                <text class="diagram-node-sub" x="264" y="93">Clients</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="104" y="126" width="112" height="38" rx="6" />
+                <text x="160" y="141">File Services</text>
+                <text class="diagram-node-sub" x="160" y="156">Shares / Access</text>
+              </g>
+            </svg>
+            <ul class="project-bullets">
+              <li>Deployed a Windows Server 2022 domain environment using AD DS, DHCP, DNS, and file services for centralised infrastructure management.</li>
+              <li>Configured domain users, OUs, and GPOs, improving policy enforcement and administrative control within the lab environment.</li>
+              <li>Implemented dynamic DNS updates and automated IP allocation to improve network organisation and reliability.</li>
+            </ul>
+          </article>
+
+          <!-- ── Project 3 ── -->
+          <article class="project-card reveal" aria-label="Network Infrastructure Design in Packet Tracer">
+            <div class="project-header">
+              <div class="project-meta">
+                <span class="project-date">Mar 2025</span>
+                <div class="project-tags" aria-label="Categories">
+                  <span class="project-tag">Networking</span>
+                </div>
+              </div>
+              <h3 class="project-title">Network Infrastructure Design (Packet Tracer)</h3>
+            </div>
+            <svg class="project-diagram" viewBox="0 0 320 176" role="img" aria-labelledby="packet-tracer-diagram-title">
+              <title id="packet-tracer-diagram-title">Packet Tracer network topology diagram</title>
+              <path class="diagram-line diagram-line--solid" d="M160 54V80M160 80H86M160 80H234M86 108V128M234 108V128M160 108V128" />
+              <g class="diagram-node diagram-node--accent">
+                <rect x="110" y="16" width="100" height="38" rx="6" />
+                <text x="160" y="31">Router</text>
+                <text class="diagram-node-sub" x="160" y="45">Static Routes</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="48" y="80" width="76" height="28" rx="6" />
+                <text x="86" y="95">Switch A</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="196" y="80" width="76" height="28" rx="6" />
+                <text x="234" y="95">Switch B</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="20" y="128" width="88" height="34" rx="6" />
+                <text x="64" y="141">Subnet A</text>
+                <text class="diagram-node-sub" x="64" y="155">Users /24</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="116" y="128" width="88" height="34" rx="6" />
+                <text x="160" y="141">Subnet B</text>
+                <text class="diagram-node-sub" x="160" y="155">Services /26</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="212" y="128" width="88" height="34" rx="6" />
+                <text x="256" y="141">Subnet C</text>
+                <text class="diagram-node-sub" x="256" y="155">Admin /27</text>
+              </g>
+            </svg>
+            <ul class="project-bullets">
+              <li>Designed a small-office network using subnetting and VLSM to improve IP allocation efficiency.</li>
+              <li>Configured static routing between network segments, enabling full connectivity across the simulated environment.</li>
+              <li>Built a scalable multi-device topology to simulate a realistic business network infrastructure.</li>
+            </ul>
+          </article>
+
+          <!-- ── Project 4 (minimal — no additional details available) ── -->
+          <article class="project-card project-card--minimal reveal" aria-label="Library Management System">
+            <div class="project-header">
+              <div class="project-meta">
+                <div class="project-tags" aria-label="Categories">
+                  <span class="project-tag">Software Development</span>
+                </div>
+              </div>
+              <h3 class="project-title">Library Management System</h3>
+            </div>
+            <p class="project-note">Application project focused on records, borrowing workflows, data handling, and structured user interactions.</p>
+          </article>
+
+          <!-- ── Project 5 (minimal — no additional details available) ── -->
+          <article class="project-card project-card--minimal reveal" aria-label="Bank Management System">
+            <div class="project-header">
+              <div class="project-meta">
+                <div class="project-tags" aria-label="Categories">
+                  <span class="project-tag">Software Development</span>
+                </div>
+              </div>
+              <h3 class="project-title">Bank Management System</h3>
+            </div>
+            <p class="project-note">Application project focused on account flows, transaction logic, validation, and data organisation.</p>
+          </article>
+
+        </div><!-- /projects-grid -->
+      </div>
+    </section><!-- /projects -->
+
+
+    <!-- ============================================================
+         SKILLS
+         Five category panels — tag chips, no bars or percentages.
+         ============================================================ -->
+    <section id="skills" class="section section--alt" aria-label="Technical skills">
+      <div class="section-inner">
+
+        <header class="section-header reveal">
+          <span class="section-tag" aria-hidden="true">04</span>
+          <h2 class="section-title">Skills</h2>
+        </header>
+
+        <div class="skills-grid">
+
+          <div class="skill-panel reveal">
+            <div class="skill-panel-header">
+              <span class="skill-panel-icon" aria-hidden="true">◈</span>
+              <h3 class="skill-panel-title">Infrastructure / Systems</h3>
+            </div>
+            <ul class="skill-tags" role="list" aria-label="Infrastructure and systems skills">
+              <li class="skill-tag">Active Directory (AD DS)</li>
+              <li class="skill-tag">Group Policy (GPO)</li>
+              <li class="skill-tag">SCCM</li>
+              <li class="skill-tag">Microsoft Intune</li>
+              <li class="skill-tag">Windows Server 2022</li>
+              <li class="skill-tag">VPN Support</li>
+              <li class="skill-tag">PC Imaging &amp; Deployment</li>
+              <li class="skill-tag">Microsoft 365</li>
+            </ul>
+          </div>
+
+          <div class="skill-panel reveal">
+            <div class="skill-panel-header">
+              <span class="skill-panel-icon" aria-hidden="true">◈</span>
+              <h3 class="skill-panel-title">Networking</h3>
+            </div>
+            <ul class="skill-tags" role="list" aria-label="Networking skills">
+              <li class="skill-tag">TCP/IP</li>
+              <li class="skill-tag">IPv4 / IPv6</li>
+              <li class="skill-tag">Subnetting (VLSM)</li>
+              <li class="skill-tag">Routing &amp; Switching</li>
+              <li class="skill-tag">DNS</li>
+              <li class="skill-tag">DHCP</li>
+              <li class="skill-tag">LAN Administration</li>
+              <li class="skill-tag">Static Routing</li>
+              <li class="skill-tag">Network Troubleshooting</li>
+            </ul>
+          </div>
+
+          <div class="skill-panel reveal">
+            <div class="skill-panel-header">
+              <span class="skill-panel-icon" aria-hidden="true">◈</span>
+              <h3 class="skill-panel-title">Security</h3>
+            </div>
+            <ul class="skill-tags" role="list" aria-label="Security skills">
+              <li class="skill-tag">Access Control</li>
+              <li class="skill-tag">ACLs</li>
+              <li class="skill-tag">Firewall Fundamentals</li>
+              <li class="skill-tag">Endpoint Protection</li>
+              <li class="skill-tag">Network Defense</li>
+              <li class="skill-tag">Vulnerability Assessment</li>
+              <li class="skill-tag">Threat Analysis</li>
+              <li class="skill-tag">Security Hardening</li>
+            </ul>
+          </div>
+
+          <div class="skill-panel reveal">
+            <div class="skill-panel-header">
+              <span class="skill-panel-icon" aria-hidden="true">◈</span>
+              <h3 class="skill-panel-title">Programming / Databases</h3>
+            </div>
+            <ul class="skill-tags" role="list" aria-label="Programming and database skills">
+              <li class="skill-tag">Python</li>
+              <li class="skill-tag">Java</li>
+              <li class="skill-tag">C#</li>
+              <li class="skill-tag">JavaScript</li>
+              <li class="skill-tag">SQL</li>
+              <li class="skill-tag">MySQL</li>
+              <li class="skill-tag">HTML / CSS</li>
+            </ul>
+          </div>
+
+          <div class="skill-panel reveal">
+            <div class="skill-panel-header">
+              <span class="skill-panel-icon" aria-hidden="true">◈</span>
+              <h3 class="skill-panel-title">Tools / Platforms</h3>
+            </div>
+            <ul class="skill-tags" role="list" aria-label="Tools and platform skills">
+              <li class="skill-tag">Wireshark</li>
+              <li class="skill-tag">Nmap</li>
+              <li class="skill-tag">Kali Linux</li>
+              <li class="skill-tag">OWASP ZAP</li>
+              <li class="skill-tag">Cisco Packet Tracer</li>
+              <li class="skill-tag">Hyper-V</li>
+              <li class="skill-tag">VirtualBox</li>
+              <li class="skill-tag">GitHub</li>
+            </ul>
+          </div>
+
+        </div><!-- /skills-grid -->
+      </div>
+    </section><!-- /skills -->
+
+
+    <!-- ============================================================
+         EDUCATION & CERTIFICATIONS
+         Timeline list (left) + cert cards (right, sticky on desktop).
+         ============================================================ -->
+    <section id="education" class="section" aria-label="Education and certifications">
+      <div class="section-inner">
+
+        <header class="section-header reveal">
+          <span class="section-tag" aria-hidden="true">05</span>
+          <h2 class="section-title">Education &amp; Certifications</h2>
+        </header>
+
+        <div class="education-grid">
+
+          <!-- Timeline -->
+          <div class="education-list reveal">
+            <p class="education-subheading">Education</p>
+
+            <div class="edu-entry">
+              <div class="edu-entry-header">
+                <div>
+                  <h3 class="edu-qual">Applied Software Development</h3>
+                  <p class="edu-institution">Mohawk College</p>
+                </div>
+                <div class="edu-meta">
+                  <span class="edu-date">Feb 2026 – Present</span>
+                  <span class="edu-location">Ontario, Canada</span>
+                </div>
+              </div>
+              <ul class="edu-bullets">
+                <li>OOP, recursion, and software development fundamentals</li>
+                <li>GUI development, software testing, and database design</li>
+                <li>Embedded systems and microcontroller programming</li>
+                <li>SQL and relational database concepts</li>
+              </ul>
+            </div>
+
+            <div class="edu-entry">
+              <div class="edu-entry-header">
+                <div>
+                  <h3 class="edu-qual">Information Technology Concepts</h3>
+                  <p class="edu-institution">Okanagan College</p>
+                </div>
+                <div class="edu-meta">
+                  <span class="edu-date">Jan 2025 – Dec 2025</span>
+                  <span class="edu-location">Kelowna, Canada</span>
+                </div>
+              </div>
+              <ul class="edu-bullets">
+                <li>TCP/IP networking, subnetting, DNS, DHCP, and routing fundamentals</li>
+                <li>Windows Server administration, Active Directory, and virtualisation</li>
+                <li>Cybersecurity fundamentals, Linux security, and network defence concepts</li>
+              </ul>
+            </div>
+
+            <div class="edu-entry">
+              <div class="edu-entry-header">
+                <div>
+                  <h3 class="edu-qual">National Certificate: Business Analysis (NQF Level 6)</h3>
+                  <p class="edu-institution">Mindworx Academy</p>
+                </div>
+                <div class="edu-meta">
+                  <span class="edu-date">Feb 2026 – Present</span>
+                  <span class="edu-location">Gauteng, Midrand</span>
+                </div>
+              </div>
+              <ul class="edu-bullets">
+                <li>Business environment and process analysis</li>
+                <li>Requirements elicitation and functional specification</li>
+                <li>Functional requirements development and quality assurance</li>
+              </ul>
+            </div>
+
+            <div class="edu-entry">
+              <div class="edu-entry-header">
+                <div>
+                  <h3 class="edu-qual">Systems Development National Certificate</h3>
+                  <p class="edu-institution">Greenview College</p>
+                </div>
+                <div class="edu-meta">
+                  <span class="edu-date">Feb 2024 – Feb 2025</span>
+                  <span class="edu-location">Johannesburg</span>
+                </div>
+              </div>
+              <ul class="edu-bullets">
+                <li>Programming, web development, systems analysis, and networking fundamentals</li>
+              </ul>
+            </div>
+
+          </div><!-- /education-list -->
+
+          <!-- Certifications -->
+          <div class="certifications-list reveal">
+            <p class="education-subheading">Certifications</p>
+
+            <div class="cert-entry">
+              <div class="cert-logo cert-logo--ibm" aria-hidden="true">IBM</div>
+              <div class="cert-info">
+                <h3 class="cert-name">IBM Cybersecurity Analyst</h3>
+                <span class="cert-year">2026</span>
+              </div>
+            </div>
+
+            <div class="cert-entry">
+              <div class="cert-logo cert-logo--google" aria-hidden="true">G</div>
+              <div class="cert-info">
+                <h3 class="cert-name">Google IT Support</h3>
+                <span class="cert-year">2026</span>
+              </div>
+            </div>
+
+          </div><!-- /certifications-list -->
+
+        </div><!-- /education-grid -->
+      </div>
+    </section><!-- /education -->
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER / CONTACT
+       ============================================================ -->
+  <footer id="contact" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-info">
+        <p class="footer-name">Siyabonga Shembe</p>
+        <p class="footer-role">IT Infrastructure &amp; Systems Engineer</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:dladlasiyabonga16@gmail.com" class="footer-link">dladlasiyabonga16@gmail.com</a>
+        <a href="https://github.com/BenStar65"             class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/siyabonga-shembe" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://benstar65.github.io/Personal-Page/" class="footer-link" target="_blank" rel="noopener noreferrer">Portfolio</a>
+      </div>
+    </div>
+    <p class="footer-copy">Soweto, Johannesburg, South Africa</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
 </html>
