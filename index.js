@@ -1,6 +1,6 @@
 /**
  * Siyabonga Shembe — Portfolio
- * script.js
+ * index.js
  *
  * Contents:
  *  1. Bootstrap         — JS-ready flag on <html>
